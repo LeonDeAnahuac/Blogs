@@ -1,6 +1,6 @@
 import React from 'react';
 import Navbar from './components/Navbar'
-import {BrowserRouter, Route} from 'react-router-dom'
+import {BrowserRouter, Route, Switch} from 'react-router-dom'
 import Home from './components/Home'
 import About from './components/About'
 import Contact from './components/Contact'
@@ -10,9 +10,12 @@ function App() {
     <BrowserRouter>
       <div className="App">
         <Navbar/>
-        <Route exact path='/' component={Home}/>
-        <Route path='/about' component={About}/>
-        <Route path='/contact' component={Contact} />
+        <Switch>
+          <Route exact path='/' component={Home}/>
+          <Route path='/about' component={About}/>
+          <Route path='/contact' component={Contact} />
+          <Route path='/:blog_id' component={Blog} ></Route>
+        </Switch>
       </div>
     </BrowserRouter>
   );
