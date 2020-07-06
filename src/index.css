@@ -36,3 +36,28 @@ html {
 .navbar li a:hover{
   background-color: #111;
 }
+.blog {
+  border: 2px solid #032f61;
+  margin: 18px 0;
+  padding: 7px 5px;
+}
+
+.blog a {
+  color: rgb(64, 99, 163);
+  text-transform: uppercase;
+  display: block;
+  font-size: 20px;
+  text-align: center;
+  text-decoration: none;
+  text-align: center;
+}
+
+.blog a:hover {
+  color: #021a35;
+  text-decoration: underline;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}

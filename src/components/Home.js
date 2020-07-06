@@ -10,7 +10,7 @@ class Home extends Component {
         const blogList = blogs.length ? (
             blogs.map(blog => {
                 return (
-                    <div key={blog.id}>
+                    <div className="blog" key={blog.id}>
                         <Link to={'/'+blog.id}>
                             <span>{blog.title}</span>
                         </Link>
@@ -23,9 +23,8 @@ class Home extends Component {
         );
         
         return (
-            <div>
+            <div className="container" >
                 <h4>Home</h4>
-                <p>Esto es home</p>
                 <div>{ blogList }</div>
             </div>
         )
