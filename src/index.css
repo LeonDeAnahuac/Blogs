@@ -45,11 +45,9 @@ html {
 .blog a {
   color: rgb(64, 99, 163);
   text-transform: uppercase;
-  display: block;
   font-size: 20px;
   text-align: center;
   text-decoration: none;
-  text-align: center;
 }
 
 .blog a:hover {
