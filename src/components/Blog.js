@@ -3,12 +3,19 @@ import {connect} from 'react-redux'
 
 class Blog extends Component{
     
+    handleClick = () => {
+        this.props.deleteBlog(this.props.blog.id);
+        this.props.history.push('/');
+    }
+
     render() {
-        console.log(this.props.blog);
         const blog = this.props.blog ? (
             <div>
-                <h4>{this.props.blog.title}</h4>
-                <p>{this.props.blog.body}</p>
+                <div className="blog-detail">
+                    <h4>{this.props.blog.title}</h4>
+                    <p>{this.props.blog.body}</p>
+                </div>
+                <button onClick={this.handleClick}>Delete Blog</button>
             </div>
         ) 
         : (<div>Loading blog...</div>);
@@ -27,4 +34,13 @@ const mapStateToProps = (state, ownProps) => {
     }
 }
 
-export default connect(mapStateToProps)(Blog);
+
+const mapDispatchToProps = (dispatch) =>  {
+    return {
+        deleteBlog: (id) => {
+            dispatch({type: 'DELETE_BLOG', id: id})
+        }
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Blog);

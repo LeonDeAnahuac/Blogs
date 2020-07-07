@@ -7,6 +7,15 @@ const initState = {
 }
 
 const rootReducer = (state = initState, action) => {
+    if(action.type === 'DELETE_BLOG') {
+        let newBlogs = state.blogs.filter(blog => {
+            return action.id !== blog.id
+        });
+        return {
+            ...state,
+            blogs: newBlogs
+        }
+    }
     return state;
 }
 

@@ -5,7 +5,6 @@ import {connect} from 'react-redux'
 class Home extends Component {
  
     render() {
-        console.log(this.props.blogs);
         const { blogs } = this.props;
         const blogList = blogs.length ? (
             blogs.map(blog => {
